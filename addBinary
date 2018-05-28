@@ -1,0 +1,19 @@
+def addBinary( a, b):
+    """
+    :type a: str
+    :type b: str
+    :rtype: str
+    """
+    a = int(a, 2)
+    b = int(b, 2)
+    total = a + b
+
+    # in short we can just write :
+    #     return format(int(a, 2)+int(b, 2), "b")
+    return format(total, "b")
+
+print(addBinary("111","1"))
+
+
+
+
