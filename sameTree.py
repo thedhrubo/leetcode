@@ -46,8 +46,6 @@ def isSameTree(self, p, q):
         return False
     if p is None and q is None:
         return True
-    if p is not None and q is not None and p.val == q.val and self.isSameTree(p.left,
-                                                                              q.left) == True and self.isSameTree(
-            p.right, q.right) == True:
+    if p is not None and q is not None and p.val == q.val and self.isSameTree(p.left,q.left) == True and self.isSameTree(p.right, q.right) == True:
         return True
     return False
