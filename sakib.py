@@ -1,21 +1,21 @@
-import string
-import random
-urlList = {}
 
+def sakib(s):
+    max = 0
+    list = []
+    longIndex = 0
+    for i in range(1, len(s)):
+        if s[i] >= max:
+            max = s[i]
+            list = []
+            longIndex = i
+            list.append(i)
+        elif s[i] < max and s[i]> s[i-1] :
+            for j in range(longIndex, i):
+                if s[j] < s[i]:
+                    list.remove(j)
+            list.append(i)
+        elif s[i] < max and s[i] < s[i-1]:
+            list.append(i)
+    return list
 
-def encode(longUrl):
-    """Encodes a URL to a shortened URL.
-
-    :type longUrl: str
-    :rtype: str
-    """
-    tinyurl = ""
-    while True:
-        tinyurl = "".join(random.SystemRandom().choice(string.ascii_letters + string.digits) for i in range(6))
-        if tinyurl not in urlList:
-            urlList[tinyurl] = longUrl
-            break
-    return tinyurl
-
-
-print(encode('google.com'))
+print(sakib([1,2,5,3,4,6,2,4, 3]))

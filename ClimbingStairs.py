@@ -39,9 +39,49 @@ def climbStairs(n):
 
     # linear time efficient code.
 
+    # Complexity Analysis :
+    # single loop till n so time complexity O(n)
+    # and the space complexity is also O(n) as the list contains the n elements
+#     By the way, this way to divide the problems in the sub problems is called dynamic programming.
     fibs = [1, 1]
     for i in range(2, n + 1):
         fibs.append(fibs[i - 2] + fibs[i - 1])
     return fibs[n]
+
+# we can do the same problem with memoization through recursion
+
+# although this is recursion, it will go through the n iterations for which time complexity is O(n)
+# space complexity is also O(n)
+
+    # def climbStairs(n):
+    #     """
+    #     :type n: int
+    #     :rtype: int
+    #     """
+    #     dict = {}
+    #     return climbRecursion(n, 0, dict)
+    #
+    # def climbRecursion(n, count, dict):
+    #     if n == 0:
+    #         return count + 1
+    #     if n < 0:
+    #         return False
+    #     if n in dict:
+    #         return dict[n]
+    #     else:
+    #         dict[n] = climbRecursion(n - 1, count, dict) + climbRecursion(n - 2, count, dict)
+    #         return dict[n]
+
+# To minimize the space complexity we can following the following way:
+
+    # def climbStairs(n):
+    #     """
+    #     :type n: int
+    #     :rtype: int
+    #     """
+    #     a = b = 1
+    #     for i in range(n):
+    #         a, b = b, a + b
+    #     return a
 
 print(climbStairs(35))

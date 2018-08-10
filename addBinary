@@ -12,8 +12,14 @@ def addBinary( a, b):
     #     return format(int(a, 2)+int(b, 2), "b")
     return format(total, "b")
 
-print(addBinary("111","1"))
+# print(addBinary("111","1"))
 
+
+def checkInt(a):
+    return int(a)
+
+
+print(checkInt("5.0"))
 
 
 
